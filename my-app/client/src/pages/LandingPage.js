@@ -7,19 +7,16 @@ const styles = {
         fontFamily: 'Hanalei Fill',
         padding: '50px',
         textAlign: 'left',
-
+    },
+    container: {
+        display: 'flex',
     }
 };
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.tap-target');
-    var instances = M.TapTarget.init(elems, options);
-  });
 
 export default function LandingPage() {
   return (
     <div>
-      <div className="container">
+      <div className="container" style={styles.container}>
         <h1 className='font-link' style={styles.h1}>Renting Made Easy</h1>
         <p>
           Login or Sign up to rent products or services near you! Want to start
