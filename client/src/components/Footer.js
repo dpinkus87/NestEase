@@ -5,7 +5,7 @@ import "materialize-css/dist/css/materialize.min.css";
 const styles = {
   color: {
     background: "#051923",
-   height: '100vh'
+   height: '100%'
   },
   img: {
     height: '35%',
