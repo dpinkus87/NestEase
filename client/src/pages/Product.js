@@ -1,9 +1,19 @@
-import React from 'react';
+import React from "react";
+import { useQuery } from "@apollo/client";
+import ProductCard from "../components/ProductCard";
+import { QUERY_PRODUCTS } from "../utils/queries";
 
-export default function Products() {
-    return (
-        <div>
+const Product = () => {
+  const { loading, data } = useQuery(QUERY_PRODUCTS);
+  const thoughts = data?.products || [];
 
-        </div>
-    );
-}
+  return (
+    <main>
+      <div>
+        <ProductCard />
+      </div>
+    </main>
+  );
+};
+
+export default Product;

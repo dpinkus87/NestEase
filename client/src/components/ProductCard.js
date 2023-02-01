@@ -1,20 +1,30 @@
 import React from "react";
 import "materialize-css/dist/css/materialize.min.css";
 
-export default function ProductCard(props) {
+const ProductCard = ({
+  productName,
+  productDescr,
+  productPrice,
+  showName = true,
+  showDescr = true,
+  showPrice = true,
+}) => {
+  if (!productName.length) {
+    return <h3>No Products Available</h3>
+  }
   return (
     <div class="row">
       <div class="col s12 m6">
         <div class="card">
           <div class="card-image">
-            <img src={img.props}></img>
-            <span class="card-title">{props.title}</span>
+            <img ></img>
+            <span class="card-title"></span>
             <a class="btn-floating halfway-fab waves-effect waves-light red">
               <i class="material-icons">Add to Cart</i>
             </a>
           </div>
           <div class="card-content">
-            <p>{props.description}</p>
+            <p></p>
           </div>
         </div>
       </div>
