@@ -93,7 +93,7 @@ const Product = () => {
                     <Typography gutterBottom variant="h5" component="h2">
                       Test Product
                     </Typography>
-                    <Typography>This a test product card.</Typography>
+                    <Typography style={{color: '#00A6FB'}}>Price: 19.99</Typography>
                   </CardContent>
                   <CardActions>
                     <Button variant="contained">Add to Cart!</Button>
@@ -104,7 +104,6 @@ const Product = () => {
           </Grid>
         </Container>
       </main>
-      {/* Footer */}
     </ThemeProvider>
   );
 };
