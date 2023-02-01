@@ -7,7 +7,12 @@ const profileSchema = new Schema({
     unique: true,
     trim: true,
     },
-  
+  username
+
+  password
+
+  rentable_items [itemSchema]
+
 });
 
 const Profile = model('Profile', profileSchema);
