@@ -18,20 +18,23 @@ const styles = {
         position: 'absolute',
         top: '25%',
         display: 'flex',
-        flex: '100%',
-        justifyContent: 'center',
         border: '5px solid rgba(0, 0, 0, 0.5)',
         boxShadow: '5px 5px 5px #00A6FB',
         height: '50%'
     },
+    content: {
+    },
+    img: {
+      width: '50%'
+    }
 };
 
 export default function LandingPage() {
   return (
     <main>
-    <div className="flex-row justify-center" style={styles.height}>
+    <div style={styles.height}>
       <div className="container" style={styles.container}>
-        <div>
+        <div style={styles.content}>
         <h1 className='font-link' style={styles.h1}>Renting Made Easy</h1>
         <p>
           Login or Sign up to rent products or services near you! Want to start
