@@ -1,9 +1,18 @@
 import React from "react";
+import { useLocation, useNavigate } from 'react-router-dom';
 import 'materialize-css/dist/css/materialize.min.css';
 
-export default function Footer() {
+const styles = {
+  color: {
+      background: '#051923'
+  }
+}
+
+const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   return (
-    <footer class="page-footer">
+    <footer class="page-footer" style={styles.color}>
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -29,4 +38,6 @@ export default function Footer() {
           </div>
         </footer>
   );
-}
+};
+
+export default Footer;

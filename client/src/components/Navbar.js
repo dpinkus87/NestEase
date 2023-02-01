@@ -1,9 +1,15 @@
 import React from "react";
 import "materialize-css/dist/css/materialize.min.css";
 
+const styles = {
+  color: {
+      background: '#051923'
+  }
+}
+
 function Navbar({ currentPage, handlePageChange }) {
   return (
-    <nav>
+    <nav style={styles.color}>
       <div className="container">
         <ul>
           <li className="nav-items">
