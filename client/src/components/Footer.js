@@ -1,7 +1,10 @@
 import React from "react";
+import { useLocation, useNavigate } from 'react-router-dom';
 import 'materialize-css/dist/css/materialize.min.css';
 
-export default function Footer() {
+const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   return (
     <footer class="page-footer">
           <div class="container">
@@ -29,4 +32,6 @@ export default function Footer() {
           </div>
         </footer>
   );
-}
+};
+
+export default Footer;

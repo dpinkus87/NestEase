@@ -19,7 +19,8 @@ const styles = {
 
 export default function LandingPage() {
   return (
-    <div>
+    <main>
+    <div className="flex-row justify-center">
       <div className="container" style={styles.container}>
         <div>
         <h1 className='font-link' style={styles.h1}>Renting Made Easy</h1>
@@ -29,8 +30,9 @@ export default function LandingPage() {
           place.
         </p>
         </div>
-        <img src="Hotpot.png"></img>
+        <img src="Hotpot.png" alt='random generated art'></img>
       </div>
     </div>
+    </main>
   );
 }
