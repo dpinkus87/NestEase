@@ -3,8 +3,8 @@ import 'materialize-css/dist/css/materialize.min.css';
 
 const styles = {
     h1: {
-        color: '#FF7F50',
-        fontFamily: 'Hanalei Fill',
+        color: '#051923',
+        fontFamily: '',
         padding: '50px',
         textAlign: 'center',
     },
@@ -13,7 +13,7 @@ const styles = {
         flex: '50%',
         justifyContent: 'center',
         border: '5px solid rgba(0, 0, 0, 0.5)',
-        boxShadow: '5px 5px 5px #9E9E9E'
+        boxShadow: '5px 5px 5px #00A6FB'
     }
 };
 

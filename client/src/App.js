@@ -42,7 +42,7 @@ const client = new ApolloClient({
 const styles = {
   main: {
     height: "100vh",
-    background: "#F8F0E3",
+    background: "#006494",
   },
 };
 
