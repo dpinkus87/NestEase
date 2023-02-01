@@ -4,6 +4,13 @@ const typeDefs = gql`
     type Profile {
         _id: ID
         name: String
-    }`
+    }
+
+type Query {
+    profiles: [Profile]!
+    profile(profileID: ID!): Profile
+    }
+
+`;
     
-module.exports = typeDefs
+module.exports = typeDefs;
