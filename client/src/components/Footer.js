@@ -16,16 +16,15 @@ const Footer = () => {
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <h5 class="white-text">Thank You For Choosing Website Name!</h5>
+                <p class="grey-text text-lighten-4">Rental Services are a quick and convienent way to make some extra money.</p>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
+                <h5 class="white-text">Developers</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/alexanderlbarlow/">Alexander Barlow</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Dylan Pinkus</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Jamie Harris</a></li>
                 </ul>
               </div>
             </div>
@@ -33,7 +32,7 @@ const Footer = () => {
           <div class="footer-copyright">
             <div class="container">
             © 2023 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            <a class="grey-text text-lighten-4 right" href="#!">ADD REPO LINK VIA FAVICON</a>
             </div>
           </div>
         </footer>

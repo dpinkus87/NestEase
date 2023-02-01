@@ -14,45 +14,6 @@ const styles = {
   },
 };
 
-// const Header = () => {
-//   return (
-//     <header style={styles.header}>
-//       <div>
-//         <ul>
-//           <li>
-//             <Link className="text-dark" to="/">
-//               <h3 style={{ fontSize: "1.25rem" }}>Website Name</h3>
-//             </Link>
-//           </li>
-//           <li>
-//             <Link className="text-dark" to="/market">
-//               <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>
-//                 Products
-//               </h3>
-//             </Link>
-//           </li>
-//           <li>
-//             <Link className="text-dark" to="/services">
-//               <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>
-//                 Services
-//               </h3>
-//             </Link>
-//           </li>
-//           <li>
-//             <Link className="text-dark" to="/login">
-//               <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>
-//                 Login
-//               </h3>
-//             </Link>
-//           </li>
-//         </ul>
-//       </div>
-//     </header>
-//   );
-// };
-
-// export default Header;
-
 export default function Header() {
 
 
