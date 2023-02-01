@@ -10,14 +10,14 @@ const ProductCard = ({
   showPrice = true,
 }) => {
   if (!productName.length) {
-    return <h3>No Products Available</h3>
+    return <h3>No Products Available</h3>;
   }
   return (
     <div class="row">
       <div class="col s12 m6">
         <div class="card">
           <div class="card-image">
-            <img ></img>
+            <img src="" alt="IMG"></img>
             <span class="card-title"></span>
             <a class="btn-floating halfway-fab waves-effect waves-light red">
               <i class="material-icons">Add to Cart</i>
@@ -30,4 +30,6 @@ const ProductCard = ({
       </div>
     </div>
   );
-}
+};
+
+export default ProductCard;
