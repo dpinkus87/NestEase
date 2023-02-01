@@ -1,5 +1,6 @@
 import React from "react";
 import "materialize-css/dist/css/materialize.min.css";
+import { Link } from "react-router-dom";
 
 const styles = {
   color: {
@@ -7,21 +8,15 @@ const styles = {
   }
 }
 
-function Navbar({ currentPage, handlePageChange }) {
+function Navbar() {
   return (
     <nav style={styles.color}>
       <div className="container">
         <ul>
           <li className="nav-items">
-            <a
-              href="#Home"
-              onClick={() => handlePageChange("Home")}
-              className={
-                currentPage === "Product" ? "nav-link active" : "nav-link"
-              }
-            >
-              Website Name
-            </a>
+          <Link className="text-dark" to="/">
+              <h3 style={{ fontSize: "1.25rem" }}>Website Name</h3>
+            </Link>
           </li>
         </ul>
         <ul
@@ -30,29 +25,25 @@ function Navbar({ currentPage, handlePageChange }) {
           class="right hide-on-med-and-down"
         >
           <li className="nav-items">
-            <a
-              href="#Products"
-              onClick={() => handlePageChange("Product")}
-              className={
-                currentPage === "Product" ? "nav-link active" : "nav-link"
-              }
-            >
-              Products
-            </a>
+          <Link className="text-dark" to="/market">
+              <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>
+                Products
+              </h3>
+            </Link>
           </li>
           <li className="nav-items">
-            <a
-              href="#Services"
-              onClick={() => handlePageChange("Services")}
-              className={
-                currentPage === "Services" ? "nav-link active" : "nav-link"
-              }
-            >
-              Services
-            </a>
+          <Link className="text-dark" to="/services">
+              <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>
+                Services
+              </h3>
+            </Link>
           </li>
           <li>
-            <button>Log In Here!</button>
+          <Link className="text-dark" to="/login">
+              <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>
+                Login
+              </h3>
+            </Link>
           </li>
         </ul>
       </div>
