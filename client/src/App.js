@@ -50,7 +50,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div style={styles.main}>
+        <div style={styles.main} className='body'>
           <Header />
           <div className="container">
             <Routes>

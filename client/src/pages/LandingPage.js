@@ -13,7 +13,8 @@ const styles = {
         flex: '50%',
         justifyContent: 'center',
         border: '5px solid rgba(0, 0, 0, 0.5)',
-        boxShadow: '5px 5px 5px #00A6FB'
+        boxShadow: '5px 5px 5px #00A6FB',
+        height: '100%'
     }
 };
 
