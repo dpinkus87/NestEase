@@ -3,6 +3,8 @@ import Navigation from './Navbar';
 import Products from '../pages/Product';
 import Services from '../pages/Services';
 import LandingPage from '../pages/LandingPage'
+import ProfilePage from '../pages/ProfilePage'
+import CheckoutPage from '../pages/CheckoutPage';
 import Navbar from './Navbar';
 
 export default function Header() {
@@ -17,6 +19,12 @@ export default function Header() {
         }
         if(currentPage === 'Services') {
             return <Services />;
+        }
+        if(currentPage === 'ProfilePage') {
+            return <ProfilePage />;
+        }
+        if(currentPage === 'CheckoutPage') {
+            return <CheckoutPage />;
         }
     }
 

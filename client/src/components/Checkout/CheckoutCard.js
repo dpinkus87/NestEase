@@ -20,8 +20,8 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="https://github.com/AlexanderBarlow/rental-site">
+        DAJ Rental-Site 
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -71,7 +71,7 @@ export default function Checkout() {
       >
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-            Company name
+            DAJ Homegoods Rental Site
           </Typography>
         </Toolbar>
       </AppBar>
