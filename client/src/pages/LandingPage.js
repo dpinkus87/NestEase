@@ -10,14 +10,19 @@ const styles = {
     },
     height: {
       height: '100vh',
-      justifyContent: 'center'
+      display: 'flex',
+      justifyContent: 'center',
+      textAlign: 'center'
     },
     container: {
+        position: 'absolute',
+        top: '25%',
         display: 'flex',
-        flex: '50%',
+        flex: '100%',
         justifyContent: 'center',
         border: '5px solid rgba(0, 0, 0, 0.5)',
         boxShadow: '5px 5px 5px #00A6FB',
+        height: '50%'
     },
 };
 
@@ -34,7 +39,7 @@ export default function LandingPage() {
           place.
         </p>
         </div>
-        <img src="Hotpot.png" alt='random generated art'></img>
+        <img src="Hotpot.png" alt='random generated art' style={styles.img}></img>
       </div>
     </div>
     </main>
