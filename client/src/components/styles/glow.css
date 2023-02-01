@@ -1,0 +1,9 @@
+.glow:hover {
+    text-shadow: 0 0 5px #00A6FB;
+}
+
+.img:hover {
+    color: #00A6FB;
+    background: #FFF;
+    box-shadow: 0 0 100px purple;
+}

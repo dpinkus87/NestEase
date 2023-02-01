@@ -1,15 +1,16 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "materialize-css/dist/css/materialize.min.css";
+import "./styles/glow.css";
 
 const styles = {
   color: {
     background: "#051923",
-   height: '100%'
+    height: "100%",
   },
   img: {
-    height: '35%',
-    width: '35%'
+    height: "35%",
+    width: "35%",
   },
 };
 
@@ -34,17 +35,18 @@ const Footer = () => {
                 <a
                   class="grey-text text-lighten-3"
                   href="https://www.linkedin.com/in/alexanderlbarlow/"
+                  className="glow"
                 >
                   Alexander Barlow
                 </a>
               </li>
               <li>
-                <a class="grey-text text-lighten-3" href="#!">
+                <a class="grey-text text-lighten-3" href="#!" className="glow">
                   Dylan Pinkus
                 </a>
               </li>
               <li>
-                <a class="grey-text text-lighten-3" href="#!">
+                <a class="grey-text text-lighten-3" href="#!" className="glow">
                   Jamie Harris
                 </a>
               </li>
@@ -52,14 +54,19 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div class="footer-copyright" >
+      <div class="footer-copyright">
         <div class="container">
           Link to sites repo.
           <a
             class="grey-text text-lighten-4 right"
             href="https://github.com/AlexanderBarlow/rental-site"
           >
-            <img src="github-mark.png" alt="github logo" style={styles.img}></img>
+            <img
+              src="github-mark.png"
+              alt="github logo"
+              style={styles.img}
+              className="img"
+            ></img>
           </a>
         </div>
       </div>

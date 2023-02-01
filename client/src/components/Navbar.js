@@ -25,7 +25,7 @@ function Navbar() {
       <div className="container">
         <ul style={styles.ul}>
           <li className="nav-items" style={styles.li}>
-            <Link className="text-dark" to="/">
+            <Link className="text-dark glow" to="/">
               <h3 style={{ fontSize: "1.5rem" }}>NestEase</h3>
             </Link>
           </li>
@@ -36,21 +36,21 @@ function Navbar() {
           class="right hide-on-med-and-down"
         >
           <li className="nav-items" style={styles.li}>
-            <Link className="text-dark" to="/market">
+            <Link className="text-dark glow" to="/market">
               <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>
                 Products
               </h3>
             </Link>
           </li>
           <li className="nav-items" style={styles.li}>
-            <Link className="text-dark" to="/services">
+            <Link className="text-dark glow" to="/services">
               <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>
                 Services
               </h3>
             </Link>
           </li>
           <li style={styles.li}>
-            <Link className="text-dark" to="/login">
+            <Link className="text-dark glow" to="/login">
               <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>Login</h3>
             </Link>
           </li>
