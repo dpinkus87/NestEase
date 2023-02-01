@@ -1,32 +1,42 @@
-const jwt = require('jsonwebtoken');
+const express = require('express');
+const { ApolloServer } = require('apollo-server-express');
+const path = require('path');
+const { authMiddleware } = require('./utils/auth');
 
-// TODO - update secret
-const secret = '';
-const expiration = '2h';
+const { typeDefs, resolvers } = require('./schemas');
+const db = require('./config/connection');
 
-module.exports = {
-  authMiddleware: function ({ req }) {
-    let token = req.body.token || req.query.token || req.headers.authorization;
+const PORT = process.env.PORT || 3001;
+const app = express();
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: authMiddleware,
+});
 
-    if (req.headers.authorization) {
-      token = token.split(' ').pop().trim();
-    }
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
-    if (!token) {
-      return req;
-    }
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
 
-    try {
-      const { data } = jwt.verify(token, secret, { maxAge: expiration });
-      req.user = data;
-    } catch {
-      console.log('Invalid token');
-    }
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
-    return req;
-  },
-  signToken: function ({ email, username, _id }) {
-    const payload = { email, username, _id };
-    return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
-  },
-};
+
+
+const startApolloServer = async (typeDefs, resolvers) => {
+  await server.start();
+  server.applyMiddleware({ app });
+  
+  db.once('open', () => {
+    app.listen(PORT, () => {
+      console.log(`API server running on port ${PORT}!`);
+      console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+    })
+  })
+  };
+  
+  startApolloServer(typeDefs, resolvers);
