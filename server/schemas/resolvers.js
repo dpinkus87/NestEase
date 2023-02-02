@@ -1,6 +1,6 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { Profile, Item } = require('../models');
-const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require("apollo-server-express");
+const { Profile, Item } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
     Query: {
@@ -60,6 +60,7 @@ const resolvers = {
 //       // },
 //     },
 
+      // const correctPw = await profile.isCorrectPassword(password);
 
 
 // rentItem:

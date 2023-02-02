@@ -2,7 +2,6 @@ const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const profileSchema = new Schema({
-
   email: {
     type: String,
     required: true,
@@ -14,7 +13,7 @@ const profileSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  address: {
+  city: {
     type: String,
     required: true,
   },
