@@ -44,7 +44,7 @@ export default function LandingPage() {
     <div style={styles.height}>
       <div className="container" style={styles.container}>
         <div style={styles.content}>
-        <h1 className='font-link' style={styles.h1}>Renting Made Easy</h1>
+        <img src="Logo.png" alt='logo' style={styles.img}></img>
         <p style={styles.p}>
           Login or Sign up to rent products or services near you! Want to start
           making some extra dough! You too can add your items to the market
