@@ -20,7 +20,7 @@ const styles = {
         top: '25%',
         left: '25%',
         display: 'flex',
-        border: '5px solid #00A6FB)',
+        border: '3px solid #000',
         boxShadow: '5px 10px 10px #00A6FB',
         height: '50%',
         background: '#051923'
@@ -32,6 +32,7 @@ const styles = {
     },
     p: {
       color: '#00A6FB',
+      textShadow: '5px 5px 5px #000'
     },
     flex: {
       display: 'flex'
