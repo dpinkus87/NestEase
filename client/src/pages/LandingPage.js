@@ -25,8 +25,8 @@ const styles = {
         height: '50%',
         background: '#051923'
     },
-    content: {
-    },
+    // content: {
+    // },
     img: {
       width: '50%'
     },

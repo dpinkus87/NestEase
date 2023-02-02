@@ -1,7 +1,6 @@
 const { Schema, model } = require('mongoose');
 
 const itemSchema = new Schema({
-
     itemName: {
         type: String,
         required: true
@@ -17,8 +16,8 @@ const itemSchema = new Schema({
     },
 
     itemOwner: {
-        profile: [profileSchema],
-        required: true,
+        type: Schema.Types.ObjectId,
+        ref: 'Profile'
     },
     itemRenter: {
         type: Schema.Types.ObjectId,
