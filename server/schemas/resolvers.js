@@ -44,8 +44,14 @@ Mutation: {
         const rented = await Item.findOne(itemName);
 
         if (!this.rentItem)
+        throw new AuthenticationError('Item is not available');
       }
+      ,
       }
+
+      removeProfile: async (parent, { profileId }) => {
+        return Profile.findOneAndDelete({ _id: profileId });
+      },
 
 
 
