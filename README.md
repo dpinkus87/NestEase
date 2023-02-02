@@ -1,6 +1,8 @@
  Rental-Site (PWA React Application) ![Project License Badge](https://img.shields.io/badge/license-MIT-brightgreen)
 # AlexanderBarlow's, asapharris', & dpinkus87's Final Project
 
+![Screenshot_20230202_110937](https://user-images.githubusercontent.com/116297281/216378435-96476b9b-2934-4c00-91f9-efd8994e5bb3.png)
+
 ## Description
 The app is a PWA react app that works similar to "craigslist". Visit the page to offer homegoods and servies to people in your area. Also set up a profile and purchase servies and products. Rent out old equipment you don't use anymore to make a few extra bucks.
 
