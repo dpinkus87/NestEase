@@ -2,8 +2,6 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
     type Profile {
-      name: String
-      username: String
       email: String
       city: String
       rentable_items: [Items]

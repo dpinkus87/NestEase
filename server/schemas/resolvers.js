@@ -11,7 +11,7 @@ const resolvers = {
             return allProfiles;
           },
       
-          profile: async (parent, { profileId }) => {
+        profile: async (parent, { profileId }) => {
             return await Profile.findOne({ _id: profileId });
           },
         items: async  () => {
@@ -62,7 +62,8 @@ Mutation: {
       },
     },
 
-      const correctPw = await profile.isCorrectPassword(password);
+      // const correctPw = await profile.isCorrectPassword(password);
+
 
 rentItem:
 

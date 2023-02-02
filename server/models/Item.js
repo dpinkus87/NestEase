@@ -16,7 +16,7 @@ const itemSchema = new Schema({
         required: true,
     },
     itemCity: {
-        type: String,
+        type: Schema.Types.ObjectId,
         ref: 'Profile'
     },
 
