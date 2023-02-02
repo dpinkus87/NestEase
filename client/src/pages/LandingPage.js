@@ -3,7 +3,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 
 const styles = {
     h1: {
-        color: '#051923',
+        color: '#00A6FB',
         fontFamily: '',
         padding: '50px',
         textAlign: 'center',
@@ -18,16 +18,20 @@ const styles = {
         position: 'absolute',
         padding: '10px',
         top: '25%',
-        left: '15%',
+        left: '25%',
         display: 'flex',
-        border: '5px solid rgba(0, 0, 0, 0.5)',
-        boxShadow: '5px 5px 5px #00A6FB',
+        border: '5px solid #00A6FB)',
+        boxShadow: '5px 10px 10px #00A6FB',
         height: '50%',
+        background: '#051923'
     },
     content: {
     },
     img: {
       width: '50%'
+    },
+    p: {
+      color: '#00A6FB',
     }
 };
 
@@ -38,7 +42,7 @@ export default function LandingPage() {
       <div className="container" style={styles.container}>
         <div style={styles.content}>
         <h1 className='font-link' style={styles.h1}>Renting Made Easy</h1>
-        <p>
+        <p style={styles.p}>
           Login or Sign up to rent products or services near you! Want to start
           making some extra dough! You too can add your items to the market
           place.

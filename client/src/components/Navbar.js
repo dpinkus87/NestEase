@@ -43,9 +43,9 @@ function Navbar() {
             </Link>
           </li>
           <li className="nav-items" style={styles.li}>
-            <Link className="text-dark glow" to="/services">
+            <Link className="text-dark glow" to="/about">
               <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>
-                Services
+                About
               </h3>
             </Link>
           </li>
