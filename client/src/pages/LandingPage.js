@@ -16,11 +16,13 @@ const styles = {
     },
     container: {
         position: 'absolute',
+        padding: '10px',
         top: '25%',
+        left: '15%',
         display: 'flex',
         border: '5px solid rgba(0, 0, 0, 0.5)',
         boxShadow: '5px 5px 5px #00A6FB',
-        height: '50%'
+        height: '50%',
     },
     content: {
     },
