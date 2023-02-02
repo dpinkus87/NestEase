@@ -35,6 +35,6 @@ const itemSchema = new Schema({
 },
 );
 
-const Item = model('item', itemSchema);
+const Item = model('Item', itemSchema);
 
 module.exports = Item;

@@ -15,9 +15,13 @@ const profileSchema = new Schema({
   },
   city: {
     type: String,
+    required: true,
   },
   rentable_items:{
-    type: [itemSchema]
+    type: [{
+      type:Schema.Types.ObjectId, 
+      ref: 'Item'
+    }]
   },
 
 });
