@@ -1,7 +1,6 @@
 const { Schema, model } = require('mongoose');
 
 const itemSchema = new Schema({
-
     itemName: {
         type: String,
         required: true
@@ -15,10 +14,14 @@ const itemSchema = new Schema({
         type: Number,
         required: true,
     },
+    itemCity: {
+        type: Schema.Types.ObjectId,
+        ref: 'Profile'
+    },
 
     itemOwner: {
-        profile: [profileSchema],
-        required: true,
+        type: Schema.Types.ObjectId,
+        ref: 'Profile'
     },
     itemRenter: {
         type: Schema.Types.ObjectId,
@@ -32,6 +35,6 @@ const itemSchema = new Schema({
 },
 );
 
-const Item = model('item', itemSchema);
+const Item = model('Item', itemSchema);
 
 module.exports = Item;

@@ -18,7 +18,7 @@ import SignUpPage from "./pages/SignUpPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import ProfilePage from "./pages/ProfilePage";
 import Product from "./pages/Product";
-import About from "./pages/About";
+import About from './pages/About'
 
 const httpLink = createHttpLink({
   uri: "/graphql",
