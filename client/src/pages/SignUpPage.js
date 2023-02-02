@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -12,6 +12,41 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useMutation } from '@apollo/client';
+import { ADD_PROFILE } from '../utils/mutations';
+import Auth from '../utils/auth';
+
+const SignUp = () => {
+  const [formState, setFormState] = useState({
+    email: '',
+    password: '',
+    city: '',
+  });
+  const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+const handleFormSubmit = async (event) => {
+  event.preventDefault(); 
+  console.log(formState);
+
+  try {
+    const { data } = await addProfile({
+      variables: { ...formState },
+    });
+
+    Auth.login(data.addProfile.token);
+  } catch (e) {
+    console.error(e);
+  }
+}
 
 function Copyright(props) {
   return (
@@ -33,7 +68,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignUpPage() {
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -79,10 +114,16 @@ export default function SignUpPage() {
             <Typography component="h1" variant="h5">
               Sign Up Today!
             </Typography>
+            {data ? (
+              <p>
+                Success! You may now head{' '}
+                <Link to="/profile">to your profile.</Link>
+              </p>
+            ) : (
             <Box
               component="form"
               noValidate
-              onSubmit={handleSubmit}
+              onSubmit={handleFormSubmit}
               sx={{ mt: 1 }}
             >
               <TextField
@@ -93,6 +134,8 @@ export default function SignUpPage() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                value={formState.email}
+                onChange={handleChange}
                 autoFocus
               />
               <TextField
@@ -103,6 +146,8 @@ export default function SignUpPage() {
                 label="Password"
                 type="password"
                 id="password"
+                value={formState.password}
+                onChange={handleChange}
                 autoComplete="current-password"
               />
               <TextField
@@ -112,6 +157,8 @@ export default function SignUpPage() {
                 name="city"
                 label="City"
                 id="city"
+                value={formState.city}
+                onChange={handleChange}
                 autoComplete="city"
               />
               <FormControlLabel
@@ -126,18 +173,18 @@ export default function SignUpPage() {
               >
                 Sign Up!
               </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
-              </Grid>
               <Copyright sx={{ mt: 5 }} />
             </Box>
+            )}
+            {error && (
+              <div className="my-3 p-3 bg-danger text-white">
+                {error.message}
+                </div> )}
           </Box>
         </Grid>
       </Grid>
     </ThemeProvider>
   );
 }
+
+export default SignUp;

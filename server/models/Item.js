@@ -1,7 +1,6 @@
 const { Schema, model } = require('mongoose');
 
 const itemSchema = new Schema({
-
     itemName: {
         type: String,
         required: true
@@ -14,6 +13,10 @@ const itemSchema = new Schema({
     itemPrice: {
         type: Number,
         required: true,
+    },
+    itemCity: {
+        type: Schema.Types.city,
+        ref: 'Profile'
     },
 
     itemOwner: {
