@@ -2,8 +2,6 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
     type Profile {
-      name: String
-      username: String
       email: String
       address: String
       rentable_items: [Items]
@@ -14,6 +12,7 @@ const typeDefs = gql`
         itemPrice: Int
         itemOwner: Profile
         itemRenter: Profile
+        itemCity: Profile
     }
 
     type Query {
