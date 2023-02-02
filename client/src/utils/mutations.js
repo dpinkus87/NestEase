@@ -25,4 +25,4 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_PRODUCT = gql`
-    `
+        `

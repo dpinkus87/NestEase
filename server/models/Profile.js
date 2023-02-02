@@ -24,7 +24,7 @@ const profileSchema = new Schema({
     unique: true,
     match: [/.+@.+\..+/, 'Must match an email address!'],
   },
-  address: {
+  city: {
     type: String,
   },
   rentable_items:{
