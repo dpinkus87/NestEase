@@ -60,7 +60,7 @@ const resolvers = {
 //       },
 //     },
 
-      const correctPw = await profile.isCorrectPassword(password);
+      // const correctPw = await profile.isCorrectPassword(password);
 
 // rentItem:
 

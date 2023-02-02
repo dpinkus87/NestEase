@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const { Profile } = require('./Profile');
 
 const itemSchema = new Schema({
     itemName: {
@@ -15,7 +16,7 @@ const itemSchema = new Schema({
         required: true,
     },
     itemCity: {
-        type: Schema.Types.city,
+        type: Schema.Types.String,
         ref: 'Profile'
     },
 
