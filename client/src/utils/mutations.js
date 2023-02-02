@@ -24,5 +24,12 @@ export const LOGIN_USER = gql`
     }
 `;
 
-export const ADD_PRODUCT = gql`
-        `
+export const ADD_ITEM = gql`
+        mutation addItem($itemName: !String, $description: !String, $itemPrice: !String){
+            addItem(itemName: $itemName, description: $description, itemPrice: $itemPrice){
+                _id
+                name
+                item
+            }
+        }
+`;

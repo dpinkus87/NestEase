@@ -32,12 +32,15 @@ const styles = {
     },
     p: {
       color: '#00A6FB',
+    },
+    flex: {
+      display: 'flex'
     }
 };
 
 export default function LandingPage() {
   return (
-    <main>
+    <main style={styles.flex}>
     <div style={styles.height}>
       <div className="container" style={styles.container}>
         <div style={styles.content}>
