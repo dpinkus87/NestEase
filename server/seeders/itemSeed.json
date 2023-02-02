@@ -1,8 +1,22 @@
 [
-    {
-      "name": "",
-      "email": "bkernighan@techfriends.dev",
-      "password": "password01",
-      "skills": ["AWK", "AMPL", "Unix"]
-    }
+  {
+    "itemName": "Lawnmower",
+    "description": "Cuts fast",
+    "itemPrice": "10"
+  },
+  {
+    "itemName": "Lawnmower2",
+    "description": "Cuts fast",
+    "itemPrice": "10"
+  },
+  {
+    "itemName": "Lawnmower3",
+    "description": "Cuts fast",
+    "itemPrice": "10"
+  },
+  {
+    "itemName": "Lawnmower4",
+    "description": "Cuts fast",
+    "itemPrice": "10"
+  }
 ]
