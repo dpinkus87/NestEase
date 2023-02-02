@@ -1,26 +1,22 @@
 [
     {
-      "username": "Alan Kay",
       "email": "akay@techfriends.dev",
       "password": "password06",
-      "address": "123 fake"
+      "city": "123 fake"
     },
     {
-      "username": "C.A.R. Hoare",
       "email": "choare@techfriends.dev",
       "password": "password07",
-      "address": "123 fake"
+      "city": "123 fake"
     },
     {
-      "username": "David Thomas",
       "email": "dthomas@techfriends.dev",
       "password": "password08",
-      "address": "123 fake"
+      "city": "123 fake"
     },
     {
-      "username": "Donald Knuth",
       "email": "dknuth@techfriends.dev",
       "password": "password09",
-      "address": "123 fake"
+      "city": "123 fake"
     }
   ]

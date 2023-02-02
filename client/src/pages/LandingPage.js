@@ -20,7 +20,7 @@ const styles = {
         top: '25%',
         left: '25%',
         display: 'flex',
-        border: '5px solid #00A6FB)',
+        border: 'px solid #000',
         boxShadow: '5px 10px 10px #00A6FB',
         height: '50%',
         background: '#051923'
@@ -32,6 +32,7 @@ const styles = {
     },
     p: {
       color: '#00A6FB',
+      textShadow: '5px 5px 5px #000'
     },
     flex: {
       display: 'flex'
@@ -44,7 +45,7 @@ export default function LandingPage() {
     <div style={styles.height}>
       <div className="container" style={styles.container}>
         <div style={styles.content}>
-        <h1 className='font-link' style={styles.h1}>Renting Made Easy</h1>
+        <img src="Logo.png" alt='logo' style={styles.img}></img>
         <p style={styles.p}>
           Login or Sign up to rent products or services near you! Want to start
           making some extra dough! You too can add your items to the market
