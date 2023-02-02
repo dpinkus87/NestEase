@@ -10,21 +10,33 @@ import CardMedia from '@mui/material/CardMedia';
 function FeaturedPost(props) {
   const { post } = props;
 
+  const styles = {
+    bgcolor: {
+      background: '#003554'
+    },
+    font: {
+      fontFamily: 'Times New Roman',
+    },
+    border: '5px solid black',
+    boxShadow: '5px 10px 10px #00A6FB',
+    marginBottom: '30px',
+  }
+
   return (
     <Grid item xs={12} md={6}>
-      <CardActionArea component="a" href="#">
-        <Card sx={{ display: 'flex' }}>
+      <CardActionArea style={styles} component="a" href="#">
+        <Card style={styles.bgcolor} sx={{ display: 'flex' }}>
           <CardContent sx={{ flex: 1 }}>
-            <Typography component="h2" variant="h5">
+            <Typography component="h2" variant="h5" color="white">
               {post.title}
             </Typography>
-            <Typography variant="subtitle1" color="text.secondary">
+            <Typography style={styles.font} variant="subtitle1" color="white">
               {post.date}
             </Typography>
-            <Typography variant="subtitle1" paragraph>
+            <Typography variant="subtitle1" paragraph color="white">
               {post.description}
             </Typography>
-            <Typography variant="subtitle1" color="primary">
+            <Typography style={styles.font} variant="subtitle1" color="primary">
               Add to cart
             </Typography>
           </CardContent>
