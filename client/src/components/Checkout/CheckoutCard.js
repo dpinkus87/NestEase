@@ -14,6 +14,15 @@ import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
 
+const styles = {
+  container: {
+      boxShadow: '5px 10px 10px #00A6FB',
+      background: '#051923',
+      border: '10px solid black',
+      marginTop: '30px',
+  },
+}
+
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -58,7 +67,7 @@ export default function Checkout() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
+      <Container style={styles.container} component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
           <Typography component="h1" variant="h4" align="center">
             Checkout
