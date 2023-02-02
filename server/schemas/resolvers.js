@@ -45,21 +45,17 @@ Mutation: {
 
         if (!this.rentItem)
         throw new AuthenticationError('Item is not available');
-      }
-      ,
-      }
-
+      },
       removeProfile: async (parent, { profileId }) => {
         return Profile.findOneAndDelete({ _id: profileId });
       },
+    },
 
 
+// rentItem:
 
-rentItem:
+// removeItem:
 
-removeItem:
-
-},
 };
 
 module.exports = resolvers;
