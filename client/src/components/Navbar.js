@@ -1,21 +1,33 @@
 import React from "react";
 import "materialize-css/dist/css/materialize.min.css";
+import { Link } from "react-router-dom";
+import { textAlign } from "@mui/system";
 
-function Navbar({ currentPage, handlePageChange }) {
+const styles = {
+  color: {
+    background: "#051923",
+    textAlign: "center",
+  },
+  ul: {
+    textAlign: "center",
+  },
+  li: {
+    textAlign: "center",
+  },
+  name: {
+    font: "",
+  },
+};
+
+function Navbar() {
   return (
-    <nav>
+    <nav style={styles.color}>
       <div className="container">
-        <ul>
-          <li className="nav-items">
-            <a
-              href="#Home"
-              onClick={() => handlePageChange("Home")}
-              className={
-                currentPage === "Product" ? "nav-link active" : "nav-link"
-              }
-            >
-              Website Name
-            </a>
+        <ul style={styles.ul}>
+          <li className="nav-items" style={styles.li}>
+            <Link className="text-dark glow" to="/">
+              <h3 style={{ fontSize: "1.5rem" }}>NestEase</h3>
+            </Link>
           </li>
         </ul>
         <ul
@@ -23,30 +35,24 @@ function Navbar({ currentPage, handlePageChange }) {
           id="nav-mobile"
           class="right hide-on-med-and-down"
         >
-          <li className="nav-items">
-            <a
-              href="#Products"
-              onClick={() => handlePageChange("Product")}
-              className={
-                currentPage === "Product" ? "nav-link active" : "nav-link"
-              }
-            >
-              Products
-            </a>
+          <li className="nav-items" style={styles.li}>
+            <Link className="text-dark glow" to="/market">
+              <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>
+                Products
+              </h3>
+            </Link>
           </li>
-          <li className="nav-items">
-            <a
-              href="#Services"
-              onClick={() => handlePageChange("Services")}
-              className={
-                currentPage === "Services" ? "nav-link active" : "nav-link"
-              }
-            >
-              Services
-            </a>
+          <li className="nav-items" style={styles.li}>
+            <Link className="text-dark glow" to="/services">
+              <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>
+                Services
+              </h3>
+            </Link>
           </li>
-          <li>
-            <button>Log In Here!</button>
+          <li style={styles.li}>
+            <Link className="text-dark glow" to="/login">
+              <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>Login</h3>
+            </Link>
           </li>
         </ul>
       </div>
