@@ -5,13 +5,13 @@ const typeDefs = gql`
       
     }
 
-type Query {
-    
+    type Query {
+        
     }
 
-type Mutation {
-    
-}
+    type Mutation {
+
+    }
 `;
     
 module.exports = typeDefs;
