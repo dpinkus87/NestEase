@@ -1,11 +1,37 @@
 const { Schema, model } = require('mongoose');
 
-const profileSchema = new Schema({
+const itemSchema = new Schema({
 
-    itemName
+    itemName: {
+        type: String,
+        required: true
+    },
 
-    description
+    description: {
+        type: String,
+    },
 
-    itemOwner
+    itemPrice: {
+        type: Number,
+        required: true,
+    },
 
-    itemRenter
+    itemOwner: {
+        profile: [profileSchema],
+        required: true,
+    },
+    itemRenter: {
+        type: Schema.Types.ObjectId,
+        ref: 'Profile'
+    },
+},
+{
+    toJSON: {
+        getters: true,
+    },
+},
+);
+
+const Item = model('item', itemSchema);
+
+module.exports = Item;
