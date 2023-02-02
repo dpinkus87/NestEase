@@ -65,9 +65,9 @@ Mutation: {
       // const correctPw = await profile.isCorrectPassword(password);
 
 
-rentItem:
+// rentItem:
 
-removeItem:
+// removeItem:
 
 };
 

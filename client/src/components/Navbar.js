@@ -26,6 +26,11 @@ const styles = {
 };
 
 function Navbar() {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
+  
   return (
     <nav style={styles.color}>
       <div className="container">
