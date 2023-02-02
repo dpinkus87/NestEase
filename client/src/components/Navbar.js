@@ -20,7 +20,7 @@ const styles = {
   img: {
     height: '20%',
     width: '20%',
-    padding: '5px',
+    padding: '2px',
   }
 };
 
@@ -29,8 +29,10 @@ function Navbar() {
     <nav style={styles.color}>
       <div className="container">
         <ul style={styles.ul}>
-          <li className="nav-items" style={styles.li}>
+          <li>
           <img src="Logo1.png" alt='logo' style={styles.img}></img>
+          </li>
+          <li className="nav-items" style={styles.li}>
             <Link className="text-dark glow" to="/">
               <h3 style={{ fontSize: "1.5rem" }}>NestEase</h3>
             </Link>
