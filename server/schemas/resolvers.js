@@ -11,7 +11,7 @@ const resolvers = {
             return allProfiles;
           },
       
-          profile: async (parent, { profileId }) => {
+        profile: async (parent, { profileId }) => {
             return await Profile.findOne({ _id: profileId });
           },
         items: async  () => {
@@ -23,42 +23,43 @@ const resolvers = {
     },
 
 // Mutation: {
-//     addProfile: async (parent, { username, email, password, city }) => {
-//         const profile = await Profile.create({ username, email, password, city });
-//         const token = signToken(profile);
-//         return { token, profile };
-//       },
-//       login: async (parent, { email, password }) => {
-//         const profile = await Profile.findOne({ email });
+//     // addProfile: async (parent, { username, email, password, city }) => {
+//     //     const profile = await Profile.create({ username, email, password, city });
+//     //     const token = signToken(profile);
+//     //     return { token, profile };
+//     //   },
+//       // login: async (parent, { email, password }) => {
+//       //   const profile = await Profile.findOne({ email });
   
-//         if (!profile) {
-//           throw new AuthenticationError('No profile found with this email address');
-//         }
+//       //   if (!profile) {
+//       //     throw new AuthenticationError('No profile found with this email address');
+//       //   }
   
-//         const correctPw = await profile.isCorrectPassword(password);
+//       //   const correctPw = await profile.isCorrectPassword(password);
   
-//         if (!correctPw) {
-//           throw new AuthenticationError('Incorrect credentials');
-//         }
+//       //   if (!correctPw) {
+//       //     throw new AuthenticationError('Incorrect credentials');
+//       //   }
   
-//         const token = signToken(profile);
+//       //   const token = signToken(profile);
   
-//         return { token, profile };
-//       },
-//       addItem: async (parent, {itemName, description, itemPrice }) => {
-//         const newItem = await Item.create({ itemName, description, itemPrice});
-//         return {newItem};
-//         },
-//       rentItem: async (parent, {itemName, itemPrice}) => {
-//         const rented = await Item.findOne(itemName);
+//       //   return { token, profile };
+//       // },
+//       // addItem: async (parent, {itemName, description, itemPrice }) => {
+//       //   const newItem = await Item.create({ itemName, description, itemPrice});
+//       //   return {newItem};
+//       //   },
+//       // rentItem: async (parent, {itemName, itemPrice}) => {
+//       //   const rented = await Item.findOne(itemName);
 
-//         if (!this.rentItem)
-//         throw new AuthenticationError('Item is not available');
-//       },
-//       removeProfile: async (parent, { profileId }) => {
-//         return Profile.findOneAndDelete({ _id: profileId });
-//       },
+//       //   if (!this.rentItem)
+//       //   throw new AuthenticationError('Item is not available');
+//       // },
+//       // removeProfile: async (parent, { profileId }) => {
+//       //   return Profile.findOneAndDelete({ _id: profileId });
+//       // },
 //     },
+
 
 
 // rentItem:
