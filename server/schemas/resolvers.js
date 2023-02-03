@@ -45,8 +45,8 @@ Mutation: {
   
         return { token, profile };
       },
-      addItem: async (parent, {itemName, description, itemPrice }) => {
-        const newItem = await Item.create({ itemName, description, itemPrice});
+      addItem: async (parent, {itemName, description, itemPrice, address }) => {
+        const newItem = await Item.create({ itemName, description, itemPrice, address });
         return {newItem};
         },
       rentItem: async (parent, {itemName, itemPrice}) => {
@@ -65,9 +65,9 @@ Mutation: {
       // const correctPw = await profile.isCorrectPassword(password);
 
 
-rentItem:
+// rentItem:
 
-removeItem:
+// removeItem:
 
 };
 

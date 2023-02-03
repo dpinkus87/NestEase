@@ -17,18 +17,15 @@ const profileSchema = new Schema({
     type: String,
     required: true,
   },
-  rentable_items:{
-    type: [{
-      type:Schema.Types.ObjectId, 
-      ref: 'Item'
-    }]
-  },
-  shoppingCart:{
-    type: [{
-      type:
-      ref:
-    }]
-  }
+  rentable_items: [{
+    type: Schema.Types.ObjectId, 
+    ref: 'Item'
+  }],
+    
+  rentedItems:[{
+    type: Schema.Types.ObjectId,
+    ref:'Item'
+  }],
 });
 
 profileSchema.pre('save', async function (next) {
