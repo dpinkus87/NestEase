@@ -6,6 +6,10 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import MainFeaturedPost from './ContactCard';
 import FeaturedPost from './UserProducts';
 
+const styles = {
+  marginBottom: '50px',
+}
+
 const mainFeaturedPost = {
   title: '@Username Here',
   description:
@@ -51,7 +55,7 @@ export default function Blog() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" style={styles}>
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={5} sx={{ mt: 3 }}>
