@@ -20,6 +20,7 @@ function FeaturedPost(props) {
     border: '5px solid black',
     boxShadow: '5px 10px 10px #00A6FB',
     marginBottom: '30px',
+    borderRadius: '10px',
   }
 
   return (
