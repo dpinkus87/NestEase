@@ -23,10 +23,10 @@ const profileSchema = new Schema({
       ref: 'Item'
     }]
   },
-  shoppingCart:{
+  rentedItems:{
     type: [{
-      type:
-      ref:
+      type: Schema.Types.ObjectId, 
+      ref: 'Item'
     }]
   }
 });

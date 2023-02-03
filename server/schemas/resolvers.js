@@ -28,6 +28,11 @@ Mutation: {
         const token = signToken(profile);
         return { token, profile };
       },
+
+      removeProfile: async (parent, { profileId }) => {
+        return Profile.findOneAndDelete({ _id: profileId });
+      },
+
       login: async (parent, { email, password }) => {
         const profile = await Profile.findOne({ email });
   
@@ -45,29 +50,35 @@ Mutation: {
   
         return { token, profile };
       },
-      addItem: async (parent, {itemName, description, itemPrice }) => {
-        const newItem = await Item.create({ itemName, description, itemPrice});
-        return {newItem};
-        },
-      rentItem: async (parent, {itemName, itemPrice}) => {
-        const rented = await Item.findOne(itemName);
 
+
+      addItem: async (parent, args) => {
+        console.log(args)
+        const newItem = await Item.create(args);
+        return newItem;
+        },
+      addItem2: async (parent, {itemName, description, itemPrice}, context) => {
+        console.log({itemName, description, itemPrice})
+        const newItem = await Item.create({itemName, description, itemPrice});
+        const user = context.user
+        await Profile.findByIdAndUpdate({_id:user.id},{$addToSet : {rentable_items: newItem._id}})
+        return newItem;
+        },
+
+      rentItem: async (parent, { _id }, context) => {
+        const rented = await Item.findOneAndUpdate({_id},{availability: false},{new: true});
+        const renterProfileUpdate = Profile.findByIdAndUpdate({_id:context.user.id},{$addToSet : { rentedItems: rented._id}},{new: true})
+       
         if (!this.rented)
         throw new AuthenticationError('Item is not available');
 
-        // if there is rented, add to shopping cart
+        return renterProfileUpdate;
       },
-      removeProfile: async (parent, { profileId }) => {
-        return Profile.findOneAndDelete({ _id: profileId });
-      },
+
+      removeItem: async (parent, { _id}) => {
+        return;
+      }
     },
-
-      // const correctPw = await profile.isCorrectPassword(password);
-
-
-rentItem:
-
-removeItem:
 
 };
 

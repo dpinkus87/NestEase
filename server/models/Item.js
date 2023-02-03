@@ -16,8 +16,8 @@ const itemSchema = new Schema({
         required: true,
     },
     itemCity: {
-        type: Schema.Types.ObjectId,
-        ref: 'Profile'
+        type: String
+     
     },
 
     itemOwner: {
@@ -28,6 +28,11 @@ const itemSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Profile'
     },
+
+    availability: {
+        type: Boolean,
+        default: true
+},
 },
 {
     toJSON: {

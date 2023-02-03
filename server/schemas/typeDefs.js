@@ -15,11 +15,29 @@ const typeDefs = gql`
         itemCity: Profile
     }
 
+    type Auth {
+        token: ID
+        profile: Profile
+    }
     type Query {
         profiles: [Profile] 
         profile(profileId: ID!): Profile
         items: [Items]
         item(itemId: ID!): Items
+    }
+
+    type Mutation {
+        addProfile( email: String!, password: String!, city: String): Auth
+        removeProfile( profileId: ID): Profile
+        login( email: String!, password: String!): Auth
+        addItem( itemName:String!, 
+                description: String, 
+                itemPrice: Int!):Items
+        addItem2( itemName:String!, 
+                description: String, 
+                itemPrice: Int!):Items
+        rentItem(_id: ID!): Profile
+        removeItem(_id: ID!): Items
     }
 
 
