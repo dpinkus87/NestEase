@@ -3,21 +3,44 @@
     "itemName": "Lawnmower",
     "description": "Cuts fast",
     "itemPrice": "10",
-    "itemOwner": "63dc122861fe4f3d68cc722e"
+    "address": {
+      "streetName": "test",
+      "city": "test",
+     "state": "test",
+      "zip":  "test"
+    }
   },
   {
     "itemName": "Lawnmower2",
     "description": "Cuts fast",
-    "itemPrice": "10"
+    "itemPrice": "10",
+    "address": {
+      "streetName": "test",
+      "city": "test",
+     "state": "test",
+      "zip":  "test"
+    }
   },
   {
     "itemName": "Lawnmower3",
     "description": "Cuts fast",
-    "itemPrice": "10"
+    "itemPrice": "10",
+    "address": {
+      "streetName": "test",
+      "city": "test",
+     "state": "test",
+      "zip":  "test"
+    }
   },
   {
     "itemName": "Lawnmower4",
     "description": "Cuts fast",
     "itemPrice": "10"
+    ,"address": {
+      "streetName": "test",
+      "city": "test",
+     "state": "test",
+      "zip":  "test"
+    }
   }
 ]

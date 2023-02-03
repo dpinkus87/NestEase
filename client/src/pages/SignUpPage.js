@@ -11,18 +11,19 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
+
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useMutation } from '@apollo/client';
 import { ADD_PROFILE } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-const SignUp = () => {
+function SignUp(props) {
   const [formState, setFormState] = useState({
     email: '',
     password: '',
     city: '',
   });
-  const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
+  const [addProfile] = useMutation(ADD_PROFILE);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -37,16 +38,16 @@ const handleFormSubmit = async (event) => {
   event.preventDefault(); 
   console.log(formState);
 
-  try {
-    const { data } = await addProfile({
-      variables: { ...formState },
-    });
-
-    Auth.login(data.addProfile.token);
-  } catch (e) {
-    console.error(e);
-  }
-}
+ const mutationResponse = await addProfile({
+  variables: {
+    email: formState.email,
+    password: formState.password,
+    city: formState.city,
+  },
+ });
+ const token = mutationResponse.data.addProfile.token;
+ Auth.login(token);
+};
 
 function Copyright(props) {
   return (
@@ -68,15 +69,6 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const data = new FormData(event.currentTarget);
-  //   console.log({
-  //     email: data.get("email"),
-  //     password: data.get("password"),
-  //   });
-  // };
 
   return (
     <ThemeProvider theme={theme}>
@@ -114,12 +106,6 @@ const theme = createTheme();
             <Typography component="h1" variant="h5">
               Sign Up Today!
             </Typography>
-            {data ? (
-              <p>
-                Success! You may now head{' '}
-                <Link to="/profile">to your profile.</Link>
-              </p>
-            ) : (
             <Box
               component="form"
               noValidate
@@ -175,11 +161,6 @@ const theme = createTheme();
               </Button>
               <Copyright sx={{ mt: 5 }} />
             </Box>
-            )}
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-                </div> )}
           </Box>
         </Grid>
       </Grid>

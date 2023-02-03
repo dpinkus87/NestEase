@@ -6,7 +6,6 @@ export const ADD_PROFILE = gql`
             token
             profile {
                 _id
-                email
             }
         }
     }
@@ -25,8 +24,8 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_ITEM = gql`
-        mutation addItem($itemName: String!, $description: String!, $itemPrice: String!){
-            addItem(itemName: $itemName, description: $description, itemPrice: $itemPrice){
+        mutation addItem($itemName: String!, $description: String!, $itemPrice: String!, $address: AddressData!){
+            addItem(itemName: $itemName, description: $description, itemPrice: $itemPrice, address: $AddressData){
                 _id
                 email
                 item

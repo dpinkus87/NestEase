@@ -14,8 +14,8 @@ const resolvers = {
         profile: async (parent, { profileId }) => {
             return await Profile.findOne({ _id: profileId });
           },
-        items: async  () => {
-          return await Item.find();
+        items: async (parent, { itemId }) => {
+          return await Item.find({_id:itemId});
         },
         item: async (parent, { itemId }) => {
           return await Item.findOne({ _id:itemId})
@@ -55,7 +55,7 @@ Mutation: {
 
       addItem: async (parent, {itemName, description, itemPrice, address}, context) => {
         console.log({itemName, description, itemPrice})
-        const newItem = await Item.create({itemName, description, itemPrice});
+        const newItem = await Item.create({itemName, description, itemPrice, address});
         const user = context.user
         await Profile.findByIdAndUpdate({_id:user.id},{$addToSet : {rentable_items: newItem._id}})
         return newItem;
