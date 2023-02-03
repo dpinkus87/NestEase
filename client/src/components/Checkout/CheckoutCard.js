@@ -36,16 +36,16 @@ function Copyright() {
   );
 }
 
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
+const steps = ['Enter your information', 'Review your order', 'Rent/Purchase items'];
 
 function getStepContent(step) {
   switch (step) {
     case 0:
       return <AddressForm />;
     case 1:
-      return <PaymentForm />;
-    case 2:
       return <Review />;
+    case 2:
+      return <PaymentForm />;
     default:
       throw new Error('Unknown step');
   }
@@ -85,9 +85,8 @@ export default function Checkout() {
                 Thank you for your order.
               </Typography>
               <Typography variant="subtitle1">
-                Your order number is #2001539. We have emailed your order
-                confirmation, and will send you an update when your order has
-                shipped.
+                We have emailed your the owner about your rental request. Contact them 
+                to finish the rental process on the item. 
               </Typography>
             </React.Fragment>
           ) : (
