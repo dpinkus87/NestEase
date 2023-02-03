@@ -52,12 +52,8 @@ Mutation: {
       },
 
 
-      addItem: async (parent, args) => {
-        console.log(args)
-        const newItem = await Item.create(args);
-        return newItem;
-        },
-      addItem2: async (parent, {itemName, description, itemPrice}, context) => {
+
+      addItem: async (parent, {itemName, description, itemPrice, address}, context) => {
         console.log({itemName, description, itemPrice})
         const newItem = await Item.create({itemName, description, itemPrice});
         const user = context.user

@@ -9,10 +9,17 @@ const typeDefs = gql`
     type Items {
         itemName: String
         description: String
-        itemPrice: Int
+        itemPrice: Float 
         itemOwner: Profile
         itemRenter: Profile
-        itemCity: Profile
+        address: AddressData
+    }
+
+    input AddressData {
+        streetName: String!
+        city: String!
+        state: String!
+        zip: String!
     }
 
     type Auth {
@@ -32,7 +39,8 @@ const typeDefs = gql`
         login( email: String!, password: String!): Auth
         addItem( itemName:String!, 
                 description: String, 
-                itemPrice: Int!):Items
+                itemPrice: Int!):Items,
+                address: AddressData!
         addItem2( itemName:String!, 
                 description: String, 
                 itemPrice: Int!):Items

@@ -15,11 +15,21 @@ const itemSchema = new Schema({
         type: Number,
         required: true,
     },
-    itemCity: {
-        type: String
-     
-    },
-
+    address: {
+        streetName: {
+          type: String
+        },
+        city: {
+          type: String
+        },
+        state: {
+          type: String
+        },
+        zip: {
+          type: String
+        }
+    
+      },
     itemOwner: {
         type: Schema.Types.ObjectId,
         ref: 'Profile'
