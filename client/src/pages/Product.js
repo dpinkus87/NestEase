@@ -108,6 +108,7 @@ const Product = () => {
                     </Typography>
                     <Typography style={{color: '#051923', textShadow: '5px 5px 5px #000', font: 'bold'}}>Price: 19.99</Typography>
                   </CardContent>
+                  
                   <CardActions>
                     <Button variant="contained">Add to Cart!</Button>
                   </CardActions>

@@ -9,10 +9,17 @@ const typeDefs = gql`
     type Items {
         itemName: String
         description: String
-        itemPrice: Int
+        itemPrice: Float 
         itemOwner: Profile
         itemRenter: Profile
-        itemCity: Profile
+        address: AddressData
+    }
+
+    input AddressData {
+        streetName: String!
+        city: String!
+        state: String!
+        zip: String!
     }
 
     type Query {
@@ -20,6 +27,11 @@ const typeDefs = gql`
         profile(profileId: ID!): Profile
         items: [Items]
         item(itemId: ID!): Items
+    }
+
+    type Mutation {
+        addItem(itemName: String!, description: String!, itemPrice: Float!, address: AddressData!):
+        Items
     }
 
 
