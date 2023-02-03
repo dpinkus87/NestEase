@@ -23,7 +23,12 @@ const profileSchema = new Schema({
       ref: 'Item'
     }]
   },
-
+  shoppingCart:{
+    type: [{
+      type:
+      ref:
+    }]
+  }
 });
 
 profileSchema.pre('save', async function (next) {

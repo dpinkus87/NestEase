@@ -54,19 +54,10 @@ export default function Blog() {
       <Container maxWidth="lg">
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
-          <Grid container spacing={4}>
+          <Grid container spacing={5} sx={{ mt: 3 }}>
             {featuredPosts.map((post) => (
               <FeaturedPost key={post.title} post={post} />
             ))}
-          </Grid>
-          <Grid container spacing={5} sx={{ mt: 3 }}>
-            {/* <Main title="Available Products" posts={posts} /> */}
-            {/* <Sidebar
-              title={sidebar.title}
-              description={sidebar.description}
-              archives={sidebar.archives}
-              social={sidebar.social}
-            /> */}
           </Grid>
         </main>
       </Container>

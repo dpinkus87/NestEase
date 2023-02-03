@@ -24,6 +24,15 @@ const styles = {
   color: {
     background: "#003554",
   },
+  text: {
+    textShadow: '5px 5x 5px #000'
+  },
+  height: {
+    height: '100vh',
+  },
+  card: {
+    boxShadow: 'boxShadow: 5px 10px 10px #00A6FB',
+  }
 };
 
 const cards = [1, 2, 3];
@@ -32,7 +41,8 @@ const theme = createTheme();
 
 const Product = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <div style={styles.height}>
+    <ThemeProvider theme={theme} >
       <CssBaseline />
       <main>
         {/* Hero unit */}
@@ -57,6 +67,7 @@ const Product = () => {
               align="center"
               color="text.secondary"
               paragraph
+              
             >
               Discover rental products!
             </Typography>
@@ -78,6 +89,8 @@ const Product = () => {
                     height: "100%",
                     display: "flex",
                     flexDirection: "column",
+                    boxShadow: '5px 10px 10px #051923',
+                    border: '2px solid #051923'
                   }}
                 >
                   <CardMedia
@@ -86,14 +99,14 @@ const Product = () => {
                       // 16:9
                       pt: "56.25%",
                     }}
-                    image="https://source.unsplash.com/random"
+                    image="https://images.unsplash.com/photo-1622737133809-d95047b9e673?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
                     alt="random"
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
                     <Typography gutterBottom variant="h5" component="h2">
                       Test Product
                     </Typography>
-                    <Typography style={{color: '#00A6FB'}}>Price: 19.99</Typography>
+                    <Typography style={{color: '#051923', textShadow: '5px 5px 5px #000', font: 'bold'}}>Price: 19.99</Typography>
                   </CardContent>
                   <CardActions>
                     <Button variant="contained">Add to Cart!</Button>
@@ -105,6 +118,7 @@ const Product = () => {
         </Container>
       </main>
     </ThemeProvider>
+    </div>
   );
 };
 
