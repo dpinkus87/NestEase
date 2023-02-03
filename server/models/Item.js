@@ -38,6 +38,11 @@ const itemSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Profile'
     },
+
+    availability: {
+        type: Boolean,
+        default: true
+},
 },
 {
     toJSON: {

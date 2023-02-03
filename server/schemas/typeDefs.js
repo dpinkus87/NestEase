@@ -22,6 +22,10 @@ const typeDefs = gql`
         zip: String!
     }
 
+    type Auth {
+        token: ID
+        profile: Profile
+    }
     type Query {
         profiles: [Profile] 
         profile(profileId: ID!): Profile
@@ -30,8 +34,18 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        addItem(itemName: String!, description: String!, itemPrice: Float!, address: AddressData!):
-        Items
+        addProfile( email: String!, password: String!, city: String): Auth
+        removeProfile( profileId: ID): Profile
+        login( email: String!, password: String!): Auth
+        addItem( itemName:String!, 
+                description: String, 
+                itemPrice: Int!):Items,
+                address: AddressData!
+        addItem2( itemName:String!, 
+                description: String, 
+                itemPrice: Int!):Items
+        rentItem(_id: ID!): Profile
+        removeItem(_id: ID!): Items
     }
 
 
