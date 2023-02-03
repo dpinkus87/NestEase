@@ -12,9 +12,17 @@ const typeDefs = gql`
         itemPrice: Float 
         itemOwner: Profile
         itemRenter: Profile
-        address: AddressData
+        address: Address
+        
     }
 
+    type Address {
+        streetName: String!
+        city: String!
+        state: String!
+        zip: String!
+    }
+    
     input AddressData {
         streetName: String!
         city: String!
@@ -34,16 +42,13 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        addProfile( email: String!, password: String!, city: String): Auth
+        addProfile( email: String!, password: String!, city: String!): Auth
         removeProfile( profileId: ID): Profile
         login( email: String!, password: String!): Auth
         addItem( itemName:String!, 
                 description: String, 
-                itemPrice: Int!):Items,
-                address: AddressData!
-        addItem2( itemName:String!, 
-                description: String, 
-                itemPrice: Int!):Items
+                itemPrice: Int!, 
+                address: AddressData):Items
         rentItem(_id: ID!): Profile
         removeItem(_id: ID!): Items
     }
