@@ -11,8 +11,8 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
-
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+
 import { useMutation } from '@apollo/client';
 import { ADD_PROFILE } from '../utils/mutations';
 import Auth from '../utils/auth';
