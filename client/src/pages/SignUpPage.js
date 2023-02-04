@@ -49,23 +49,23 @@ const handleFormSubmit = async (event) => {
  Auth.login(token);
 };
 
-// function Copyright(props) {
-//   return (
-//     <Typography
-//       variant="body2"
-//       color="text.secondary"
-//       align="center"
-//       {...props}
-//     >
-//       {"Copyright © "}
-//       <Link color="inherit" href="https://mui.com/">
-//         NestEase
-//       </Link>{" "}
-//       {new Date().getFullYear()}
-//       {"."}
-//     </Typography>
-//   );
-// }
+function Copyright(props) {
+  return (
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      {...props}
+    >
+      {"Copyright © "}
+      <Link color="inherit" href="https://mui.com/">
+        NestEase
+      </Link>{" "}
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
+  );
+}
 
 const theme = createTheme();
 
@@ -159,7 +159,7 @@ const theme = createTheme();
               >
                 Sign Up!
               </Button>
-              {/* <Copyright sx={{ mt: 5 }} /> */}
+              <Copyright sx={{ mt: 5 }} />
             </Box>
           </Box>
         </Grid>
