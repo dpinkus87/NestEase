@@ -29,6 +29,7 @@ function Navbar() {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
+    window.location.replace('/')
   };
   
   return (
@@ -69,9 +70,9 @@ function Navbar() {
               <Link className="text-dark glow" to="/profile">
               <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>Profile</h3>
               </Link>
-              <Link className="text-dark glow" to="/" onClick={logout}>
+              <a className="text-dark glow" onClick={logout}>
               <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>Logout</h3>
-              </Link>
+              </a>
               </>
             ) : (
             <Link className="text-dark glow" to="/login">
