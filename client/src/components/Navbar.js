@@ -66,7 +66,7 @@ function Navbar() {
           <li style={styles.li}>
             {Auth.loggedIn() ? (
               <>
-              <Link className="text-dark glow" to="/login">
+              <Link className="text-dark glow" to="/profile">
               <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>Profile</h3>
               </Link>
               <a onClick={logout}>
