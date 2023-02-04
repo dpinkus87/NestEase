@@ -6,6 +6,10 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import MainFeaturedPost from './ContactCard';
 import FeaturedPost from './UserProducts';
 
+import { useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+import { QUERY_SINGLE_PROFILE } from '../../utils/queries';
+
 const styles = {
   marginBottom: '50px',
 }
@@ -52,6 +56,8 @@ const featuredPosts = [
 const theme = createTheme();
 
 export default function Blog() {
+
+  
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

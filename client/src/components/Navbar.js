@@ -23,6 +23,9 @@ const styles = {
     height: '20%',
     width: '20%',
     padding: '2px',
+  },
+  licon: {
+    display: 'flex'
   }
 };
 
@@ -65,7 +68,7 @@ function Navbar() {
               </h3>
             </Link>
           </li>
-          <li style={styles.li}>
+          <li style={styles.licon}>
             {Auth.loggedIn() ? (
               <>
               <Link className="text-dark glow" to="/profile">

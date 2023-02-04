@@ -6,8 +6,26 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 
+import { useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+import { QUERY_SINGLE_PROFILE } from '../../utils/queries';
+
+
 function MainFeaturedPost(props) {
   const { post } = props;
+
+  const { profileId } = useParams();
+
+  const { loading, data }  = useQuery(QUERY_SINGLE_PROFILE, {
+    variables: { profileId: profileId },
+  });
+
+  const profile = data?.profile || {};
+  console.log(profile);
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
 
   return (
     <Paper
@@ -44,14 +62,11 @@ function MainFeaturedPost(props) {
             }}
           >
             <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-              {post.title}
+              {profile.email}
             </Typography>
             <Typography variant="h5" color="inherit" paragraph>
-              {post.description}
+              {profile.city}
             </Typography>
-            <Link variant="subtitle1" href="#">
-              {post.linkText}
-            </Link>
           </Box>
         </Grid>
       </Grid>
