@@ -21,7 +21,7 @@ const styles = {
         top: '25%',
         left: '25%',
         display: 'flex',
-        border: 'px solid #000',
+        border: '2px solid #000',
         boxShadow: '5px 10px 10px #00A6FB',
         height: '50%',
         background: '#051923'
