@@ -1,5 +1,6 @@
 import React from "react";
 import 'materialize-css/dist/css/materialize.min.css';
+import LOGO from "../images/logo.png";
 
 const styles = {
     h1: {
@@ -45,7 +46,7 @@ export default function LandingPage() {
     <div style={styles.height}>
       <div className="container" style={styles.container}>
         <div style={styles.content}>
-        <img src="Logo.png" alt='logo' style={styles.img}></img>
+        <img src={LOGO} alt='logo' style={styles.img}></img>
         <p style={styles.p}>
           Login or Sign up to rent products or services near you! Want to start
           making some extra dough! You too can add your items to the market

@@ -3,6 +3,7 @@ import "materialize-css/dist/css/materialize.min.css";
 import { Link } from "react-router-dom";
 import { textAlign } from "@mui/system";
 import Auth from '../utils/auth'
+import LOGO from "../images/logo1.png";
 
 const styles = {
   color: {
@@ -37,7 +38,7 @@ function Navbar() {
       <div className="container">
         <ul style={styles.ul}>
           <li>
-          <img src="Logo1.png" alt='logo' style={styles.img}></img>
+          <img src={LOGO} alt='logo' style={styles.img}></img>
           </li>
           <li className="nav-items" style={styles.li}>
             <Link className="text-dark glow" to="/">
