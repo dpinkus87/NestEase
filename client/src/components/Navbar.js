@@ -69,9 +69,9 @@ function Navbar() {
               <Link className="text-dark glow" to="/profile">
               <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>Profile</h3>
               </Link>
-              <a onClick={logout}>
+              <Link className="text-dark glow" to="/" onClick={logout}>
               <h3 style={{ fontSize: "1.25rem", fontWeight: "700" }}>Logout</h3>
-              </a>
+              </Link>
               </>
             ) : (
             <Link className="text-dark glow" to="/login">
