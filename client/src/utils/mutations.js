@@ -35,13 +35,12 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_ITEM = gql`
-        mutation addItem($itemName: String!, $description: String!, $itemPrice: Float!, $city: String!){
+        mutation addItem($itemName: String!, $description: String, $itemPrice: String!, $city: String){
             addItem(itemName: $itemName, description: $description, itemPrice: $itemPrice, city: $city){
-                _id
                 itemName
                 description
                 itemPrice
-                City
+                city
             }
         }
 `;

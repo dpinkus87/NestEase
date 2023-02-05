@@ -14,8 +14,8 @@ const resolvers = {
     profile: async (parent, { profileId }) => {
       return await Profile.findOne({ _id: profileId });
     },
-    items: async (parent, { itemId }) => {
-      return await Item.find({ _id: itemId });
+    items: async (parent, { itemName, description, itemPrice }) => {
+      return await Item.find();
     },
     item: async (parent, { itemId }) => {
       return await Item.findOne({ _id: itemId });
@@ -55,21 +55,15 @@ const resolvers = {
 
     addItem: async (
       parent,
-      { itemName, description, itemPrice, address },
-      context
+      { itemName, description, itemPrice, city },
     ) => {
-      console.log({ itemName, description, itemPrice });
+      console.log({ itemName, description, itemPrice, city });
       const newItem = await Item.create({
         itemName,
         description,
         itemPrice,
-        address,
+        city,
       });
-      const user = context.user;
-      await Profile.findByIdAndUpdate(
-        { _id: user.id },
-        { $addToSet: { rentable_items: newItem._id } }
-      );
       return newItem;
     },
 

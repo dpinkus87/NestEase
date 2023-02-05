@@ -12,7 +12,7 @@ const itemSchema = new Schema({
     },
 
     itemPrice: {
-        type: Number,
+        type: String,
         required: true,
     },
     city: {

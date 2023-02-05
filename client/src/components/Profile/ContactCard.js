@@ -14,18 +14,18 @@ import { QUERY_SESSION_USER } from '../../utils/queries';
 function MainFeaturedPost(props) {
   const { post } = props;
 
-  // const { id } = useParams();
+  const { id } = useParams();
 
-  // const { loading, data }  = useQuery(QUERY_SESSION_USER, {
-  //   variables: { _id: id }
-  // });
+  const { loading, data }  = useQuery(QUERY_SESSION_USER, {
+    variables: { _id: id }
+  });
 
-  // const profile = data?.profileUser || {};
-  // console.log(profile);
+  const profile = data?.profileUser || {};
+  console.log(profile);
 
-  // if (loading) {
-  //   return <div>Loading...</div>
-  // }
+  if (loading) {
+    return <div>Loading...</div>
+  }
 
   return (
     <Paper

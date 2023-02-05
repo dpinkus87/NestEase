@@ -12,10 +12,10 @@ const typeDefs = gql`
         _id: ID 
         itemName: String
         description: String
-        itemPrice: Float 
+        itemPrice: String 
         itemOwner: Profile
         itemRenter: Profile
-        address: Address
+        city: String
         
     }
     type Address {
@@ -47,8 +47,8 @@ const typeDefs = gql`
         login( email: String!, password: String!): Auth
         addItem( itemName:String!, 
                 description: String, 
-                itemPrice: Int!, 
-                address: AddressData):Items
+                itemPrice: String!, 
+                city: String ):Items
         rentItem(_id: ID!): Profile
         removeItem(_id: ID!): Items
     }

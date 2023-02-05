@@ -6,9 +6,24 @@ import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import { useQuery } from '@apollo/client';
 
-function FeaturedPost(props) {
-  const { post } = props;
+import { QUERY_ALL_ITEM } from '../../utils/queries'
+
+function FeaturedPost({item}) {
+
+  // const { loading, data }  = useQuery(QUERY_ALL_ITEM);
+
+  // const item = data?.items || {};
+
+  // console.log(data)
+  // console.log(item)
+
+  // if (loading) {
+  //   return <div>Loading...</div>
+  // }
+
+  // const { post } = props;
 
   const styles = {
     bgcolor: {
@@ -23,19 +38,23 @@ function FeaturedPost(props) {
     borderRadius: '10px',
   }
 
+  const img = {
+    image: 'https://source.unsplash.com/random',
+  };
+
   return (
     <Grid item xs={12} md={6}>
       <CardActionArea style={styles} component="a" href="#">
         <Card style={styles.bgcolor} sx={{ display: 'flex' }}>
           <CardContent sx={{ flex: 1 }}>
             <Typography component="h2" variant="h5" color="white">
-              {post.title}
+              {item.itemName}
             </Typography>
             <Typography style={styles.font} variant="subtitle1" color="white">
-              {post.date}
+              {item.description}
             </Typography>
             <Typography variant="subtitle1" paragraph color="white">
-              {post.description}
+              {item.itemPrice}
             </Typography>
             <Typography style={styles.font} variant="subtitle1" color="primary">
               Add to cart
@@ -44,8 +63,8 @@ function FeaturedPost(props) {
           <CardMedia
             component="img"
             sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}
-            image={post.image}
-            alt={post.imageLabel}
+            image={img.image}
+            alt='alt text'
           />
         </Card>
       </CardActionArea>
@@ -53,14 +72,14 @@ function FeaturedPost(props) {
   );
 }
 
-FeaturedPost.propTypes = {
-  post: PropTypes.shape({
-    date: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    imageLabel: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  }).isRequired,
-};
+// FeaturedPost.propTypes = {
+//   post: PropTypes.shape({
+//     date: PropTypes.string.isRequired,
+//     description: PropTypes.string.isRequired,
+//     image: PropTypes.string.isRequired,
+//     imageLabel: PropTypes.string.isRequired,
+//     title: PropTypes.string.isRequired,
+//   }).isRequired,
+// };
 
 export default FeaturedPost;

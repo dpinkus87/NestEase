@@ -32,14 +32,29 @@ const styles = {
 
 const ProductForm = () => {
   const [formState, setFormState] = useState({ 
-    name: "", 
+    itemName: "", 
     description: "",
-    price: "",
+    itemPrice: "",
     city: "",
  });
   const [addProduct, { error, data }] = useMutation(ADD_ITEM);
 
-  // update state based on form input changes
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    console.log(formState);
+   
+    try{
+    const { data }  = await addProduct({
+        variables: {...formState}
+      });
+      
+    window.location.replace('/profile')
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -47,29 +62,8 @@ const ProductForm = () => {
       ...formState,
       [name]: value,
     });
-  };
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    console.log(formState);
-    try {
-      const data  = await addProduct({
-        variables: { ...formState },
-      });
-
-    } catch (e) {
-      console.error(e);
-    }
-
-    // clear form values
-    setFormState({
-        name: "", 
-        description: "",
-        price: "",
-        city: "",
-    });
-    window.location.replace('/profile')
-    console.log(data);
+    console.log(formState)
   };
 
   const theme = createTheme();
@@ -117,9 +111,9 @@ const ProductForm = () => {
                 required
                 fullWidth
                 label="Product Name"
-                name="name"
+                name="itemName"
                 autoFocus
-                value={formState.name}
+                value={formState.itemName}
                 onChange={handleChange}
               />
               <TextField
@@ -136,9 +130,9 @@ const ProductForm = () => {
                 required
                 fullWidth
                 label="Product's Price"
-                name="price"
+                name="itemPrice"
                 autoFocus
-                value={formState.price}
+                value={formState.itemPrice}
                 onChange={handleChange}
               />
               <TextField
