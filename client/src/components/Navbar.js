@@ -26,6 +26,11 @@ const styles = {
   },
   licon: {
     display: 'flex'
+  },
+  container: {
+    display:'flex-inline',
+    flex: "row",
+    height: '100%'
   }
 };
 
@@ -38,7 +43,7 @@ function Navbar() {
   
   return (
     <nav style={styles.color}>
-      <div className="container">
+      <div className="container flex" style={styles.container}>
         <ul style={styles.ul}>
           <li>
           <img src={LOGO} alt='logo' style={styles.img}></img>

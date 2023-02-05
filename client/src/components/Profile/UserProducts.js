@@ -7,6 +7,7 @@ import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { useQuery } from '@apollo/client';
+import Button from '@mui/material/Button';
 
 import { QUERY_ALL_ITEM } from '../../utils/queries'
 
@@ -54,10 +55,7 @@ function FeaturedPost({item}) {
               {item.description}
             </Typography>
             <Typography variant="subtitle1" paragraph color="white">
-              {item.itemPrice}
-            </Typography>
-            <Typography style={styles.font} variant="subtitle1" color="primary">
-              Add to cart
+              ${item.itemPrice}
             </Typography>
           </CardContent>
           <CardMedia

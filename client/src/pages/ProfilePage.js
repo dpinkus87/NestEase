@@ -9,7 +9,7 @@ import { borderRadius, width } from "@mui/system";
 
 const styles = {
   height: {
-    height: "100vh",
+    height: "100%",
     padding: "2px",
   },
   btn: {
