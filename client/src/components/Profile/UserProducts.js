@@ -62,7 +62,7 @@ function FeaturedPost({item}) {
           </CardContent>
           <CardMedia
             component="img"
-            sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}
+            sx={{ width: '150px', height: "150px", display: { xs: 'none', sm: 'block' } }}
             image={img.image}
             alt='alt text'
           />
