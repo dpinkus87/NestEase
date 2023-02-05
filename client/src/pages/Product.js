@@ -16,9 +16,9 @@ import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-// import { useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import ProductCard from "../components/ProductCard";
-// import { QUERY_PRODUCTS } from "../utils/queries";
+import { QUERY_PRODUCTS } from "../utils/queries";
 
 const styles = {
   color: {
