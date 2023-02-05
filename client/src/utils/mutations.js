@@ -35,11 +35,13 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_ITEM = gql`
-        mutation addItem($itemName: String!, $description: String!, $itemPrice: String!, $address: AddressData!){
-            addItem(itemName: $itemName, description: $description, itemPrice: $itemPrice, address: $AddressData){
+        mutation addItem($itemName: String!, $description: String!, $itemPrice: Float!, $city: String!){
+            addItem(itemName: $itemName, description: $description, itemPrice: $itemPrice, city: $city){
                 _id
-                email
-                item
+                itemName
+                description
+                itemPrice
+                City
             }
         }
 `;

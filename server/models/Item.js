@@ -15,20 +15,9 @@ const itemSchema = new Schema({
         type: Number,
         required: true,
     },
-    address: {
-        streetName: {
-          type: String
-        },
-        city: {
-          type: String
-        },
-        state: {
-          type: String
-        },
-        zip: {
-          type: String
-        }
-    
+    city: {
+        type: String,
+        required: true
       },
     itemOwner: {
         type: Schema.Types.ObjectId,

@@ -5,8 +5,8 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import MainFeaturedPost from './ContactCard';
 import FeaturedPost from './UserProducts';
-
 import { useParams } from 'react-router-dom';
+
 import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_PROFILE } from '../../utils/queries';
 
