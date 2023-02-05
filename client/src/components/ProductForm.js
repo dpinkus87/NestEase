@@ -35,10 +35,7 @@ const ProductForm = () => {
     name: "", 
     description: "",
     price: "",
-    street: "",
     city: "",
-    state: "",
-    zip: "",
  });
   const [addProduct, { error, data }] = useMutation(ADD_ITEM);
 
@@ -56,7 +53,7 @@ const ProductForm = () => {
     event.preventDefault();
     console.log(formState);
     try {
-      const { data } = await addProduct({
+      const data  = await addProduct({
         variables: { ...formState },
       });
 
@@ -69,12 +66,10 @@ const ProductForm = () => {
         name: "", 
         description: "",
         price: "",
-        street: "",
         city: "",
-        state: "",
-        zip: "",
     });
     window.location.replace('/profile')
+    console.log(data);
   };
 
   const theme = createTheme();
@@ -150,36 +145,9 @@ const ProductForm = () => {
                 margin="normal"
                 required
                 fullWidth
-                name="street"
-                label="Product's Street Address"
-                value={formState.street}
-                onChange={handleChange}
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
                 name="city"
                 label="Product's City"
                 value={formState.city}
-                onChange={handleChange}
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="state"
-                label="Product's State"
-                value={formState.state}
-                onChange={handleChange}
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="zip"
-                label="Product's Zip Code"
-                value={formState.zip}
                 onChange={handleChange}
               />
               <Button

@@ -8,24 +8,24 @@ import Box from '@mui/material/Box';
 
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { QUERY_SINGLE_PROFILE } from '../../utils/queries';
+import { QUERY_SESSION_USER } from '../../utils/queries';
 
 
 function MainFeaturedPost(props) {
   const { post } = props;
 
-  const { profileId } = useParams();
+  // const { id } = useParams();
 
-  const { loading, data }  = useQuery(QUERY_SINGLE_PROFILE, {
-    variables: { profileId: profileId },
-  });
+  // const { loading, data }  = useQuery(QUERY_SESSION_USER, {
+  //   variables: { _id: id }
+  // });
 
-  const profile = data?.profile || {};
-  console.log(profile);
+  // const profile = data?.profileUser || {};
+  // console.log(profile);
 
-  if (loading) {
-    return <div>Loading...</div>
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>
+  // }
 
   return (
     <Paper
@@ -62,10 +62,10 @@ function MainFeaturedPost(props) {
             }}
           >
             <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-              {profile.email}
+              Email: dylan@gmail.com
             </Typography>
             <Typography variant="h5" color="inherit" paragraph>
-              {profile.city}
+              City: Philly
             </Typography>
           </Box>
         </Grid>

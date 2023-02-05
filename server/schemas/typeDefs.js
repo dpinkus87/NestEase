@@ -18,7 +18,6 @@ const typeDefs = gql`
         address: Address
         
     }
-
     type Address {
         streetName: String!
         city: String!
@@ -32,7 +31,6 @@ const typeDefs = gql`
         state: String!
         zip: String!
     }
-
     type Auth {
         token: ID
         profile: Profile
@@ -43,7 +41,6 @@ const typeDefs = gql`
         items: [Items]
         item(itemId: ID!): Items
     }
-
     type Mutation {
         addProfile( email: String!, password: String!, city: String!): Auth
         removeProfile( profileId: ID): Profile
@@ -55,8 +52,6 @@ const typeDefs = gql`
         rentItem(_id: ID!): Profile
         removeItem(_id: ID!): Items
     }
-
-
 `;
     
 module.exports = typeDefs;

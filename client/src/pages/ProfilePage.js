@@ -3,10 +3,9 @@ import "materialize-css/dist/css/materialize.min.css";
 import ProfilePageMain from "../components/Profile/Profile";
 import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
-
-import { useParams } from "react-router-dom";
-import { useQuery } from "@apollo/client";
 import { borderRadius, width } from "@mui/system";
+
+
 
 const styles = {
   height: {
