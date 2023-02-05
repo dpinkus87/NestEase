@@ -1,5 +1,6 @@
 .glow:hover {
     text-shadow: 0 0 5px #00A6FB;
+    cursor: pointer;
 }
 
 .img {
