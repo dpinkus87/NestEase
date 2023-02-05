@@ -1,7 +1,8 @@
-import React from "react";
+import * as React from "react";
 import "materialize-css/dist/css/materialize.min.css";
 import ProfilePageMain from "../components/Profile/Profile";
 import { Link } from "react-router-dom";
+import Button from '@mui/material/Button';
 
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
@@ -17,10 +18,6 @@ const styles = {
     fontWeight: "700", 
     color: "#00A6FB",
     background: "#051923",
-    padding: '5px',
-    width: '14%',
-    boxShadow: "5px 5px 5px #00A6FB"
-    // border: '2px solid #000',
   },
 }
 
@@ -29,9 +26,9 @@ export default function ProfilePage() {
     <div style={styles.height}>
       <ProfilePageMain />
       <Link  to="/addproduct">
-        <button style={styles.btn} className="nav glow">
+        <Button variant="contained" style={styles.btn} className="glow">
           Add your Product!
-        </button>
+        </Button>
       </Link>
     </div>
   );
