@@ -1,42 +1,70 @@
-import React from "react";
-import "materialize-css/dist/css/materialize.min.css";
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
+import CardActionArea from '@mui/material/CardActionArea';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import { useQuery } from '@apollo/client';
+import Button from '@mui/material/Button';
+import { QUERY_ALL_ITEM } from '../utils/queries'
 
-const styles = {
-  color: {
-    background: '#003554'
-  }
+function Product({item}) {
+
+  const rented = (event) => {
+    event.preventDefault();
+  document.getElementById(item._id).innerHTML = 'Rented';
 }
 
 
-const ProductCard = ({
-  productName,
-  productDescr,
-  productPrice,
-  showName = true,
-  showDescr = true,
-  showPrice = true,
-}) => {
-  if (!productName.length) {
-    return <h3>No Products Available</h3>;
-  }
-  return (
-    <div class="row" style={styles.color}>
-      <div class="col s12 m6">
-        <div class="card">
-          <div class="card-image">
-            <img src="" alt="IMG"></img>
-            <span class="card-title"></span>
-            <a class="btn-floating halfway-fab waves-effect waves-light red">
-              <i class="material-icons">Add to Cart</i>
-            </a>
-          </div>
-          <div class="card-content">
-            <p></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
-export default ProductCard;
+  const styles = {
+    bgcolor: {
+      background: '#003554'
+    },
+    font: {
+      fontFamily: 'Times New Roman',
+    },
+    border: '5px solid black',
+    boxShadow: '5px 10px 10px #00A6FB',
+    marginBottom: '30px',
+    borderRadius: '10px',
+  }
+
+  const img = {
+    image: 'https://source.unsplash.com/random',
+  };
+
+  return (
+    <Grid item xs={12} md={6}>
+      <CardActionArea style={styles} component="a" href="#">
+        <Card style={styles.bgcolor} sx={{ display: 'flex' }}>
+          <CardContent sx={{ flex: 1 }}>
+            <Typography component="h2" variant="h5" color="white">
+              {item.itemName}
+            </Typography>
+            <Typography style={styles.font} variant="subtitle1" color="white">
+              {item.description}
+            </Typography>
+            <Typography variant="subtitle1" paragraph color="white">
+              ${item.itemPrice}
+            </Typography>
+          </CardContent>
+          <CardMedia
+            component="img"
+            sx={{ width: '150px', height: "150px", display: { xs: 'none', sm: 'block' } }}
+            image={img.image}
+            alt='alt text'
+          />
+        </Card>
+        <Button variant="contained" style={styles.btn} className="glow" id={item._id} onClick={rented}>
+          Add your Product!
+        </Button>
+      </CardActionArea>
+    </Grid>
+  );
+}
+
+
+export default Product;

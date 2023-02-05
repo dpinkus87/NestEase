@@ -15,24 +15,27 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import UserProduct from '../components/ProductCard';
 
 import { useQuery } from "@apollo/client";
-import ProductCard from "../components/ProductCard";
-import { QUERY_ALL_ITEM } from "../utils/queries";
+
+import { QUERY_ALL_ITEM } from '../utils/queries'
 
 const styles = {
   color: {
     background: "#003554",
   },
   text: {
-    textShadow: '5px 5x 5px #000'
+    textShadow: "5px 5x 5px #000",
   },
   height: {
-    height: '100vh',
+    height: "100%",
+    display: 'flex-inline',
+
   },
   card: {
-    boxShadow: 'boxShadow: 5px 10px 10px #00A6FB',
-  }
+    boxShadow: "boxShadow: 5px 10px 10px #00A6FB",
+  },
 };
 
 const cards = [1, 2, 3];
@@ -40,85 +43,69 @@ const cards = [1, 2, 3];
 const theme = createTheme();
 
 const Product = () => {
+
+
+const { loading, data }  = useQuery(QUERY_ALL_ITEM);
+
+  let items;
+
+  if (data){
+    items = data.items;
+  };
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+
   return (
     <div style={styles.height}>
-    <ThemeProvider theme={theme} >
-      <CssBaseline />
-      <main>
-        {/* Hero unit */}
-        <Box
-          sx={{
-            pt: 8,
-            pb: 6,
-          }}
-        >
-          <Container maxWidth="sm">
-            <Typography
-              component="h1"
-              variant="h2"
-              align="center"
-              color="text.primary"
-              gutterBottom
-            >
-              Market Place
-            </Typography>
-            <Typography
-              variant="h5"
-              align="center"
-              color="text.secondary"
-              paragraph
-              
-            >
-              Discover rental products!
-            </Typography>
-            <Stack
-              sx={{ pt: 4 }}
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-            ></Stack>
-          </Container>
-        </Box>
-        <Container sx={{ py: 8 }} maxWidth="md">
-          {/* End hero unit */}
-          <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card
-                  sx={{
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    boxShadow: '5px 10px 10px #051923',
-                    border: '2px solid #051923'
-                  }}
-                >
-                  <CardMedia
-                    component="img"
-                    sx={{
-                      // 16:9
-                      pt: "56.25%",
-                    }}
-                    image="https://images.unsplash.com/photo-1622737133809-d95047b9e673?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
-                    alt="random"
-                  />
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Test Product
-                    </Typography>
-                    <Typography style={{color: '#051923', textShadow: '5px 5px 5px #000', font: 'bold'}}>Price: 19.99</Typography>
-                  </CardContent>
-                  
-                  <CardActions>
-                    <Button variant="contained">Add to Cart!</Button>
-                  </CardActions>
-                </Card>
-              </Grid>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <main>
+          {/* Hero unit */}
+          <Box
+            sx={{
+              pt: 8,
+              pb: 6,
+            }}
+          >
+            <Container maxWidth="sm">
+              <Typography
+                component="h1"
+                variant="h2"
+                align="center"
+                color="text.primary"
+                gutterBottom
+              >
+                Market Place
+              </Typography>
+              <Typography
+                variant="h5"
+                align="center"
+                color="text.secondary"
+                paragraph
+              >
+                Discover rental products!
+              </Typography>
+              <Stack
+                sx={{ pt: 4 }}
+                direction="row"
+                spacing={2}
+                justifyContent="center"
+              ></Stack>
+            </Container>
+          </Box>
+          <Container sx={{ py: 8 }} maxWidth="md">
+            {/* End hero unit */}
+            <Grid className='container' spacing={5} sx={{ mt: 3 }}>
+            {items.map((item) => (
+              <UserProduct key={item._id} item={item} />
             ))}
           </Grid>
-        </Container>
-      </main>
-    </ThemeProvider>
+          </Container>
+        </main>
+      </ThemeProvider>
     </div>
   );
 };

@@ -34,11 +34,13 @@ export const QUERY_SESSION_USER = gql`
     }
 `;
 
-
-// export const QUERY_ALL_ITEM = gql`
-//     items {
-//         itemName
-//         description
-//         itemPrice
-//     }
-// `;
+export const QUERY_ALL_ITEM = gql`
+    query items {
+        items {
+        itemName
+        description
+        itemPrice
+        _id
+    }
+    }
+`;
