@@ -29,7 +29,7 @@ export default function ProfilePage() {
     <div style={styles.height}>
       <ProfilePageMain />
       <Link  to="/addproduct">
-        <button style={styles.btn} className="glow">
+        <button style={styles.btn} className="nav glow">
           Add your Product!
         </button>
       </Link>
