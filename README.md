@@ -24,6 +24,9 @@ npm install react, react materialize, mui, express.js, Graphql, MongoDB
 ## Usage
 The website is a progressive web application meaning it can be downloaded from the web browser into an app on your device. Take the app on the go and use your location to pinpoint services and products in your area. 
 
+Github Repo: https://github.com/AlexanderBarlow?tab=repositories
+</br>Deployed Application: https://nestease.herokuapp.com/
+
 
 ## License
 
