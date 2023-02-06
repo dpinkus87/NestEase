@@ -57,5 +57,5 @@ n/a
 
 ## Questions
 If you have any questions about the project you can contact us via email or GitHub with the information below. 
->Email: alex' email, asapharris88@gmail.com, Dylan's email  
+>Email: alex' email, asapharris88@gmail.com, dylanpinkus@gmail.com  
 >GitHub : [AlexanderBarlow, asapharris, dpinkus87](https://github.com/AlexanderBarlow, https://github.com/asapharris, https://github.com/dpinkus87)
